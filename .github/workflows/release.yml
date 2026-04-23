@@ -21,7 +21,7 @@ jobs:
         id: check_version
         run: |
           # 1. Extract version from your main PHP file
-          NEW_VERSION=$(grep -m 1 "Version:" simulation-manager.php | awk '{print $NF}')
+          NEW_VERSION=$(grep -m 1 "Version:" cf7-prevent-spam.php | awk '{print $NF}')
           
           # 2. Get the most recent tag from Git. Default to 0.0.0 if no tags exist.
           LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null | sed 's/^v//' || echo "0.0.0")
@@ -58,8 +58,8 @@ jobs:
       - name: Create ZIP archive
         if: env.STATUS == 'higher'
         run: |
-          # Ensure we name the zip simulation-manager.zip to match your plugin slug
-          zip -r simulation-manager.zip . -x "*.git*" "*.github*" "node_modules/*" ".gitignore"
+          # Ensure we name the zip cf7-prevent-spam.zip to match your plugin slug
+          zip -r cf7-prevent-spam.zip . -x "*.git*" "*.github*" "node_modules/*" ".gitignore"
 
       - name: Create GitHub Release
         if: env.STATUS == 'higher'
@@ -68,7 +68,7 @@ jobs:
           tag_name: v${{ steps.check_version.outputs.version }}
           name: Release v${{ steps.check_version.outputs.version }}
           body: "Automatic release for version ${{ steps.check_version.outputs.version }}"
-          files: simulation-manager.zip
+          files: cf7-prevent-spam.zip
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
