@@ -6,6 +6,7 @@
  * Author: David Oghi
  */
 
+
 if (!defined('ABSPATH')) exit;
 
 define( 'CF7ASP_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
