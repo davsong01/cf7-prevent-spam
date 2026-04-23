@@ -2,7 +2,7 @@
 /**
  * Plugin Name: CF7 Advanced Anti-Spam Shield
  * Description: Advanced anti-spam protection for Contact Form 7 + CFDB7 + Admin Management
- * Version: 3.4.0
+ * Version: 3.4.1
  * Author: David Oghi
  */
 
