@@ -1,190 +1,129 @@
-# Simulation Manager Plugin for WordPress
+# CF7 Prevent Spam Plugin
 
-A lightweight WordPress plugin for managing and hosting interactive simulations directly from the WordPress admin dashboard.
+A lightweight and powerful WordPress plugin designed to protect **Contact Form 7 (CF7)** forms from spam submissions, bots, and fake enquiries without affecting real users.
 
 ---
 
 ## 🚀 Overview
 
-The Simulation Manager Plugin allows administrators to upload, organize, and serve simulation files (HTML or ZIP packages) without using cPanel or manual server file management.
+CF7 Prevent Spam enhances your Contact Form 7 forms with intelligent spam protection layers. It filters out unwanted submissions using smart detection rules while keeping the user experience smooth for genuine visitors.
 
-It automatically handles:
-
-* File uploads (HTML or ZIP)
-* Folder creation and organization
-* ZIP extraction
-* Public URL generation
-* Simulation listing and management
-
-This makes it ideal for schools, training platforms, CBT systems, and e-learning websites.
+The plugin is built for performance, simplicity, and reliability.
 
 ---
 
 ## ✨ Features
 
-* Upload simulation files (HTML or ZIP)
-* Automatic folder creation per simulation
-* ZIP auto-extraction into dedicated folders
-* Direct public URL generation for each simulation
-* Admin dashboard for managing all simulations
-* Edit and delete simulations
-* View stored simulations in a structured table
-* Optional folder content viewer
+* Smart spam detection for Contact Form 7
+* Bot and automated submission protection
+* Keyword-based spam filtering
+* Blacklist and whitelist support
+* Real-time form validation
+* CFDB7 integration for form data tracking
+* Admin dashboard for spam monitoring
+* Spam logs and activity tracking
+* Lightweight and fast performance
+* Works without affecting genuine submissions
 
 ---
 
-## 🧩 How It Works
+## 🧠 How It Works
 
-1. Admin uploads a simulation file (HTML or ZIP)
-2. Plugin creates a folder inside:
+1. User submits a CF7 form
+2. Plugin analyzes submission in real-time
+3. It checks for:
 
-   ```
-   /simulation-library/
-   ```
-3. If ZIP is uploaded:
-
-   * It is extracted automatically into the folder
-4. If HTML is uploaded:
-
-   * It is stored directly in the folder
-5. A public URL is generated:
-
-   ```
-   https://yourdomain.com/simulation-library/folder-name/
-   ```
-6. Simulation is saved in the database and displayed in the admin panel
+   * Suspicious keywords
+   * Bot-like behavior
+   * Blacklisted patterns
+   * Invalid or spam-like inputs
+4. If clean → form is submitted normally
+5. If spam → submission is blocked and logged
 
 ---
 
-## 📂 Database Structure
+## 📊 Admin Features
 
-The plugin creates a custom table:
+The plugin adds an admin interface where you can:
 
-```
-{wp_prefix}simulation
-```
-
-### Columns:
-
-* id
-* name
-* folder_name
-* file_name
-* file_type
-* link
-* created_at
-* updated_at
+* View spam logs
+* Manage blacklist keywords
+* Manage whitelist entries
+* Monitor blocked submissions
+* Adjust filtering sensitivity
 
 ---
 
-## 🖥️ Admin Features
+## 🔒 Security Layers
 
-### Simulation Manager Page
-
-* Add new simulation button
-* Table listing all simulations
-* View simulation link
-* Edit simulation details
-* Delete simulation
-
-### Add Simulation Modal
-
-Fields:
-
-* Name (required)
-* Folder Name (optional)
-* File Upload (HTML or ZIP)
+* Input sanitization and validation
+* Honeypot-style bot detection (optional logic)
+* Keyword filtering engine
+* Submission pattern analysis
+* Protection against form flooding
 
 ---
 
-## 📁 File Storage Structure
+## ⚙️ Installation
 
-All files are stored in:
-
-```
-/wp-root/simulation-library/
-```
-
-Example:
-
-```
-simulation-library/
-   math-test/
-      index.html
-      assets/
-```
-
----
-
-## 🔒 Security Features
-
-* File type validation (HTML, ZIP only)
-* Secure upload handling
-* Nonce verification on forms
-* Path traversal protection during ZIP extraction
-
----
-
-## ⚙️ Requirements
-
-* WordPress 5.8+
-* PHP 7.4+
-* Write permission to root directory (for folder creation)
-
----
-
-## 🛠️ Installation
-
-1. Upload plugin folder to:
+1. Download or clone the plugin
+2. Upload to:
 
    ```
    wp-content/plugins/
    ```
-2. Activate plugin from WordPress dashboard
-3. Go to:
+3. Activate from WordPress dashboard
+4. Ensure Contact Form 7 is installed
+5. Configure settings under plugin menu
 
-   ```
-   WordPress Admin → Simulation Manager
-   ```
-4. Start uploading simulations
+---
+
+## 🧪 Compatibility
+
+* WordPress 5.8+
+* PHP 7.4+
+* Contact Form 7 (latest version)
+* CFDB7 (optional integration)
 
 ---
 
 ## 🎯 Use Cases
 
-* Online CBT systems
-* School learning simulations
-* Training platforms
-* Interactive HTML learning modules
-* Educational testing environments
+* Business websites
+* School admission forms
+* Contact pages
+* Lead generation forms
+* Service inquiry forms
+* E-commerce contact forms
 
 ---
 
-## 🚧 Future Improvements (Optional)
+## 🚧 Future Improvements (Optional Roadmap)
 
-* Simulation categories
-* User access restrictions
-* Analytics (views per simulation)
-* Drag & drop file manager
-* Versioning for simulations
-* Cloud storage integration (S3, etc.)
+* AI-based spam detection
+* IP reputation blocking
+* reCAPTCHA integration
+* Country-based filtering
+* Advanced analytics dashboard
+* Email alert system for spam attempts
 
 ---
 
 ## 📌 Notes
 
-* Folder name determines the public URL structure
-* If no folder name is provided, one is auto-generated
-* ZIP files are automatically unpacked for immediate use
+* Plugin works silently in the background
+* No impact on form speed for real users
+* Designed to reduce spam without adding friction
+* Fully compatible with standard CF7 workflows
 
 ---
 
 ## 👨‍💻 Author
 
-Built as a custom WordPress solution for interactive simulation hosting and management.
+Custom-built WordPress plugin focused on improving form security and lead quality for Contact Form 7 websites.
 
 ---
 
 ## 📄 License
 
-Custom project license — not for redistribution without permission.
+Private/custom use license — not for redistribution without permission.
