@@ -6,10 +6,10 @@
  * Author: David Oghi
  */
 
-
 if (!defined('ABSPATH')) exit;
 
 define( 'CF7ASP_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+
 
 require_once CF7ASP_PLUGIN_DIR . 'inc/plugin-update-checker/plugin-update-checker.php';
 
